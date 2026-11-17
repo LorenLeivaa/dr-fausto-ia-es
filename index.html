@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Dr. Fausto IA · Tu médico personal durante 90 días</title>
+<meta name="description" content="Tu asistente con inteligencia artificial del Ritual Rojo del Hígado.">
+<meta name="robots" content="noindex">
+<meta name="theme-color" content="#7a1712">
+<meta name="apple-mobile-web-app-title" content="Dr. Fausto IA">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<link rel="icon" href="avatar.jpg">
+<link rel="apple-touch-icon" href="avatar.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="estilos.css?v=3">
+</head>
+<body>
+
+<header class="cabecera">
+  <div class="marca">
+    <div class="avatar" id="avatar">
+      <img src="avatar.jpg" alt="" onerror="this.remove()">
+      <span class="iniciales">DF</span>
+    </div>
+    <div class="marca-texto">
+      <h1>Dr. Fausto IA</h1>
+      <p>En línea · lee tu analítica al instante</p>
+    </div>
+    <span class="etiqueta">Con IA</span>
+  </div>
+  <div class="acciones">
+    <div class="contador" id="contador" aria-live="polite"></div>
+    <button type="button" class="nuevo" id="nuevo" hidden>Conversación nueva</button>
+  </div>
+</header>
+
+<main class="hilo" id="hilo" role="log" aria-live="polite" aria-label="Conversación">
+
+  <section class="bienvenida" id="bienvenida">
+    <div class="avatar avatar-grande" aria-hidden="true">
+      <img src="avatar.jpg" alt="" onerror="this.remove()">
+      <span class="iniciales">DF</span>
+    </div>
+    <h2>¡Bienvenido! Mándame tu analítica</h2>
+    <span class="sello">Ritual Rojo del Hígado</span>
+    <p class="bajada">
+      Leo tu analítica (GOT, GPT, GGT, colesterol, triglicéridos y glucosa), te explico con palabras sencillas qué dice y te ajusto el Ritual Rojo semana a semana. Puedes escribirme los números o mandarme una foto de la analítica. O toca una de estas:
+    </p>
+    <div class="sugerencias">
+      <button class="sugerencia" type="button">Tengo 61 años y me han salido GPT 68, GOT 45 y triglicéridos 230. ¿Qué significa y qué ajusto?</button>
+      <button class="sugerencia" type="button">Es domingo: te paso mi peso y mi cintura para que me prepares la semana.</button>
+      <button class="sugerencia" type="button">¿Qué le pregunto a mi médico en la próxima consulta?</button>
+      <button class="sugerencia" type="button">Este fin de semana hay comida familiar y vino. ¿Qué hago para no volver a atascar el hígado?</button>
+    </div>
+  </section>
+
+</main>
+
+<div class="pie">
+  <div class="adjunto" id="adjunto" hidden>
+    <img id="adjunto-img" alt="Foto para enviar">
+    <button type="button" id="quitar-foto" aria-label="Quitar la foto">×</button>
+  </div>
+  <form class="compositor" id="compositor">
+    <button type="button" id="foto" class="boton-foto" aria-label="Añadir una foto">
+      <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
+        <path d="M4 8h3l2-2.5h6L17 8h3v11H4z" fill="none" stroke="currentColor"
+              stroke-width="1.9" stroke-linejoin="round"/>
+        <circle cx="12" cy="13" r="3.4" fill="none" stroke="currentColor" stroke-width="1.9"/>
+      </svg>
+    </button>
+    <input type="file" id="archivo" accept="image/*" hidden>
+    <textarea id="entrada" rows="1" placeholder="Escríbele al Dr. Fausto…"
+              enterkeyhint="send" autocomplete="off"
+              aria-label="Escríbele al Dr. Fausto"></textarea>
+    <button type="submit" id="enviar" aria-label="Enviar">
+      <svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true">
+        <path d="M12 20V5M5 12l7-7 7 7" fill="none" stroke="currentColor"
+              stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </button>
+  </form>
+  <p class="aviso">
+    Asistente con inteligencia artificial. Puede equivocarse. No diagnostica ni sustituye a tu médico: no cambies ni dejes tu medicación sin hablarlo con él. Si tienes dolor en el pecho, falta de aire o un síntoma fuerte, ve a urgencias o llama al 112.
+  </p>
+</div>
+
+<script src="app.js?v=4"></script>
+</body>
+</html>
